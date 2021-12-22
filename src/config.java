@@ -6,8 +6,9 @@
 public class config {
   /** 路径  mpf*/
   // 当前项目的绝对路径
-  // final static String path_project = new String("F:/object/javapritace/pritace_2021_12_21/pritace2021_12_21/");
-  final static String path_project = new String("F:/object/science-sj-teacher/Science-SJ-Teacher/");
+  final static String path_project = new String("F:/object/javapritace/pritace_2021_12_21/toolOfPublish/");
+  // 小学科学项目的路径
+  // final static String path_project = new String("F:/object/science-sj-teacher/Science-SJ-Teacher/");
   // 存放脚本的相对路径
   final static String path_shell = new String("bat/");
   

@@ -40,7 +40,9 @@ public class contral {
    **/
   public String getLastPublisId() throws IOException {
     BufferedReader reader = this.execBat(config.bat_getFileLastLine, null, new File(config.path_project + "/bat"));
-    String id = reader.readLine().substring(9, 17);
+
+    String id = reader.readLine();
+    id = id.substring(id.indexOf("-")+1,id.indexOf(";"));
     return id;
   }
 
@@ -70,6 +72,9 @@ public class contral {
     try {
       this.lastId = this.getLastPublisId();
       this.NewPublishId = this.getLastCommitId();
+      if(this.lastId == this.NewPublishId){
+        System.out.println("don't have new commit!!!");
+      }
     } catch (IOException e) {
       // TODO Auto-generated catch block
       System.out.println("the error of get commit id!!!");
