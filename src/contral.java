@@ -21,6 +21,12 @@ public class contral {
 
   }
 
+  /** 打包增量文件 mpf
+   **/
+  public void packUpdate() throws IOException{
+    this.execBat(config.bat_packUpdate+this.lastId + " "+ this.NewPublishId, null, new File(config.path_project + config.path_bat));
+  }
+
   /**
    * 获取当前最后一次提交的id
    * mpf

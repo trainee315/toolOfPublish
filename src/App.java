@@ -17,15 +17,14 @@ import java.io.File;
  * 3. 执行命令
  * mpf
  */
-// 增量更新的命令 git archive -o f9ea26b_61d6c05.zip f9ea26b $(git diff f9ea26b 61d6c05
-// --name-only)
 public class App {
 
     /** 变量 mpf */
     final static contral contral = new contral();
 
     public static void main(String[] args) throws Exception {
-        contral.initialize();
+        App.contral.initialize();
+        App.contral.packUpdate();
     }
 
 }

@@ -18,7 +18,9 @@ public class config {
   // 读取日志的最后一行
   final static String bat_getFileLastLine = new String("cmd /c readFileLastLine.bat " + config.path_project + "/log/packlog.txt");
   // 写日志 需要一个参数为写入的内容
-  final static String bat_writeLog = new String("cmd /c writeLog.bat");
+  final static String bat_writeLog = new String("cmd /c writeLog.bat ");
+  // 打包增量更新
+  final static String bat_packUpdate = new String("cmd /c packUpdate.bat ");
   
   /** 命令 mpf*/
   final static String command_test = new String("ping www.stackabuse.com");
