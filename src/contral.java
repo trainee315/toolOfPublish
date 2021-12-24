@@ -40,7 +40,7 @@ public class contral {
     return null;
   }
 
-  /**
+  /** 
    * 获取上次发布的id mpf
    **/
   public String getLastPublisId() throws IOException {
