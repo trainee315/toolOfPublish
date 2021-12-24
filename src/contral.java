@@ -28,7 +28,7 @@ public class contral {
   }
 
   /**
-   * 获取当前最后一次提交的id
+   * 获取当前最后一次提交的id 
    * mpf
    **/
   public String getLastCommitId() throws IOException {
