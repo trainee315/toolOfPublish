@@ -18,7 +18,6 @@ public class contral {
   private String NewPublishId = "";
 
   public void constructor() {
-    this.initialize();
 
   }
 
@@ -42,12 +41,12 @@ public class contral {
     BufferedReader reader = this.execBat(config.bat_getFileLastLine, null, new File(config.path_project + "/bat"));
 
     String id = reader.readLine();
-    id = id.substring(id.indexOf("-")+1,id.indexOf(";"));
+    id = id.substring(id.indexOf("#") + 1, id.indexOf("@"));
     return id;
   }
 
   /**
-   * 执行某个脚本:并输出并返回结果 mpf
+   * 执行某个脚本:返回结果 mpf
    **/
   public BufferedReader execBat(String command, String[] envp, File file) throws IOException {
 
@@ -67,18 +66,28 @@ public class contral {
     return time;
   }
 
+  public void writeLog() throws IOException{
+    String date = this.getNowDate();
+    String command = config.bat_writeLog + " "+this.lastId+"#"+this.NewPublishId+"@date:" + date;
+    this.execBat(command, null,new File(config.path_project + config.path_bat));
+  }
+
   /** 初始化 mpf */
-  public void initialize() {
+  public Boolean initialize() {
     try {
       this.lastId = this.getLastPublisId();
       this.NewPublishId = this.getLastCommitId();
-      if(this.lastId == this.NewPublishId){
+      if (this.lastId == this.NewPublishId) {
         System.out.println("don't have new commit!!!");
+        return false;
       }
+      this.writeLog();
+      return true;
     } catch (IOException e) {
       // TODO Auto-generated catch block
       System.out.println("the error of get commit id!!!");
       e.printStackTrace();
+      return false;
     }
 
   }

@@ -10,11 +10,15 @@ public class config {
   // 小学科学项目的路径
   // final static String path_project = new String("F:/object/science-sj-teacher/Science-SJ-Teacher/");
   // 存放脚本的相对路径
-  final static String path_shell = new String("bat/");
+  final static String path_bat = new String("bat/");
+  // 存放日志的相对路径
+  final static String path_log = new String("log/");
   
   /** 脚本 mpf*/
   // 读取日志的最后一行
   final static String bat_getFileLastLine = new String("cmd /c readFileLastLine.bat " + config.path_project + "/log/packlog.txt");
+  // 写日志 需要一个参数为写入的内容
+  final static String bat_writeLog = new String("cmd /c writeLog.bat");
   
   /** 命令 mpf*/
   final static String command_test = new String("ping www.stackabuse.com");
